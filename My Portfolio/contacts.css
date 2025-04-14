@@ -1,0 +1,158 @@
+#contact {
+    min-height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+    background: var(--bg);
+    padding-top: 50px;
+}
+
+.contact-title {
+    text-align: center;
+    margin-bottom: 30px;
+    padding-bottom: 50px;
+    font-size: 5.5rem;
+    color: var(--accent-yellow);
+}
+
+.contact-wrapper {
+    display: flex;
+    align-items: flex-start;
+    gap: 60px;
+    max-width: 800px;
+    width: 100%;
+    padding-bottom: 70px;
+    padding-left: 100px;
+}
+
+.profile-pic-contact {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid var(--accent-yellow);
+    box-shadow: 0 0 20px rgba(255, 208, 0, 0.3);
+    flex-shrink: 0;
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding-top: 70px;
+    padding-left: 40px;
+}
+
+.contact-name {
+    color: var(--accent-yellow);
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: -25px;
+    text-align: center;
+}
+
+.icon-row {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.contact-icon {
+    position: relative;
+    width: 60px;
+    height: 30px;
+    border-radius: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+    font-size: 24px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.8);
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+
+.contact-icon span {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transform: scale(0);
+    transition: all 0.3s ease;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.contact-icon i {
+    position: relative;
+    z-index: 1;
+    transition: all 0.3s ease;
+}
+
+.contact-icon:hover {
+    width: 150px;
+    border-radius: 30px;
+}
+
+.contact-icon:hover i {
+    transform: scale(0);
+    opacity: 0;
+}
+
+.contact-icon:hover span {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.contact-icon::before {
+    content: '';
+    position: absolute;
+    width: 120%;
+    height: 120%;
+    background: rgba(255, 255, 255, 0.1);
+    transform: rotate(45deg);
+    left: -110%;
+    top: 90%;
+    transition: all 0.3s ease;
+}
+
+.contact-icon:hover::before {
+    animation: shine 0.8s ease;
+}
+
+@keyframes shine {
+    100% {
+        left: 110%;
+        top: -90%;
+    }
+}
+
+.phone { background: #27ae60; }
+.email { background: #3498db; }
+.facebook { background: #1877f2; }
+.instagram { background: #e4405f; }
+.tiktok { background: #000000; }
+
+@media (max-width: 768px) {
+    .contact-wrapper {
+        flex-direction: column;
+        align-items: center;
+        padding-left: 0;
+    }
+    
+    .contact-info {
+        padding-top: 20px;
+        padding-left: 0;
+    }
+    
+    .profile-pic-contact {
+        width: 200px;
+        height: 200px;
+    }
+}
